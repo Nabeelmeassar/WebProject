@@ -13,12 +13,12 @@ public mitglieds: Array<Mitglied>;
   ngOnInit() {
     // @ts-ignore
     this.mitglieds = [
-      new Mitglied('Nabeel', '223', 'meassar2222@hotmail.com'),
-      new Mitglied('lkfd', 'klfg', 'measslkgfar2222@hotmail.com'),
-      new Mitglied('fg', '2gf23', 'meassar2222@hotmail.com'),
-      new Mitglied('fg', 'fg', 'fg@hotmail.com'),
-      new Mitglied('fg', 'fg', 'fg@hotmail.com'),
-      new Mitglied('fg', 'fg', 'fg@hotmail.com'),
+      new Mitglied('Nabeel', '223', 'meassar2222@hotmail.com', 'student'),
+      new Mitglied('lkfd', 'klfg', 'measslkgfar2222@hotmail.com' , 'student'),
+      new Mitglied('fg', '2gf23', 'meassar2222@hotmail.com' , 'student'),
+      new Mitglied('fg', 'fg', 'fg@hotmail.com' , 'student'),
+      new Mitglied('fg', 'fg', 'fg@hotmail.com' , 'student'),
+      new Mitglied('fg', 'fg', 'fg@hotmail.com' , 'student')
     ];
   }
 
