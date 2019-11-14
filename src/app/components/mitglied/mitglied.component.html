@@ -1,0 +1,16 @@
+<div class="row">
+    <div *ngFor="let mitglied of mitglieds " class="card m-1" style="width: 18rem;">
+        <div class="container-fluid p-2">
+            <img class="card-img-top" src="https://hs-flensburg.de/sites/default/files/styles/portraitfoto/public/2017-11/petersen_kai.jpg.jpeg?itok=JVf1P7aR" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Prof. Dr. phil.</h5>
+                <h4> {{mitglied.name}} </h4>
+                <p> {{mitglied.emailAdresse}} </p>
+                <p> {{mitglied.buero}} </p>
+                <p class="card-text">Professor am Fachbereich Wirtschaft </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

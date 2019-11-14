@@ -1,0 +1,98 @@
+p {
+    font-family: Lato;
+}
+/* Add application styles & imports to this file! */
+.ueberschrieft{
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+.divLogo{
+    font-family: 'Aguafina Script';font-size: 19px;
+    text-align: center;
+    float: left;
+    color: white;
+    width: 100%;
+    background-color: rgba(100, 89, 206, 0.48);
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+p {
+    font-family: Lato;
+}
+.navi{
+    left: 0px;
+    right: 0px;
+    height: auto;
+    background-color: rgb(206, 63, 63);
+}
+.navi li {
+    display: inline;
+}
+.navi i{
+    color: white;
+}
+.navi ul {
+    list-style-type: none;
+    min-width: 170px;
+}
+.navi li a {
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.navi li a.active {
+    color: white;
+}
+ul{
+    padding: 10px;
+}
+li a:hover:not(.active) {
+    background-color: rgba(0, 0, 0, 0.63);
+    color: white;
+    border-radius: 5px;
+    padding:10px auto;
+
+
+
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.footer div{
+    display: inline;
+    margin:5px;
+}
+.footer a{
+    text-decoration: none;
+    color: white;
+
+}
+.footer a:hover:not(.active) {
+    color: black;
+}
+
+.footer{
+    left: 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgb(206, 63, 63);
+    color: white;
+    padding: 5px;
+    padding-bottom: 20px
+}
