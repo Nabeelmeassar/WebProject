@@ -3,6 +3,5 @@ export class Mitglied {
                 public buero: string,
                 public emailAdresse: string,
                 public stelle: string,
-
     ) {}
 }

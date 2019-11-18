@@ -1,5 +1,5 @@
 p {
-    font-family: Lato;
+    font-family: Lato, serif;
 }
 /* Add application styles & imports to this file! */
 .ueberschrieft{
@@ -22,10 +22,7 @@ p {
     font-family: Lato;
 }
 .navi{
-    left: 0px;
-    right: 0px;
-    height: auto;
-    background-color: rgb(206, 63, 63);
+    background: #4769a0;
 }
 .navi li {
     display: inline;
@@ -72,19 +69,15 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-.footer div{
-    display: inline;
-    margin:5px;
+.page-footer{
+margin-top: 20px;
+    color: white;
+    background: #4769a0;
 }
-.footer a{
+.page-footer a{
     text-decoration: none;
     color: white;
-
 }
-.footer a:hover:not(.active) {
-    color: black;
-}
-
 .footer{
     left: 0;
     text-align: center;
