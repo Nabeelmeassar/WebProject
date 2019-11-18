@@ -1,0 +1,25 @@
+<div>
+    <!--    <app-add-mitglied (EventShowMitglied)="showMitglied($event)"></app-add-mitglied>-->
+</div>
+<h1 class="text-sm-center">Mitglied</h1>
+<div *ngIf="mitglieds.length > 0"  class="row">
+    <input type="text" (keyup)="suchen()" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+<table id="myTable">
+    <tr>
+        <th>Name:</th>
+        <th>Stelle:</th>
+        <th>Email:</th>
+        <th>Büro:</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let mitglied of mitglieds">
+        <td>{{mitglied.name}}</td>
+        <td>{{mitglied.stelle}}</td>
+        <td>{{mitglied.emailAdresse}}</td>
+        <td>{{mitglied.buero}}</td>
+        <td><button (click)="delete(mitglied.emailAdresse)">Delete</button></td>
+    </tr>
+</table>
+</div>
+
+

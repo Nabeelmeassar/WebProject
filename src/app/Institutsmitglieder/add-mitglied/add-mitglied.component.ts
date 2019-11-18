@@ -26,17 +26,43 @@ export class AddMitgliedComponent implements OnInit {
   }
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    this.clickMethod(this.profileForm.value.name);
-    this.EventShowMitglied.emit(this.mitglieds);
-    console.log(this.mitglieds);
+    if (this.profileForm.value.length > 0) {
+    } else {
+      this.clickMethod(this.profileForm.value.name);
+      this.EventShowMitglied.emit(this.mitglieds);
+      console.log(this.mitglieds);
+    }
   }
   clickMethod(name: string) {
     if (confirm('Möchten Sie ' + name + ' hinzufügen')) {
-      this.mitglieds.push(this.profileForm.value);
-      this.myService.setTest(this.mitglieds);
-    } else {
 
+        this.mitglieds.push(this.profileForm.value);
+        this.myService.setTest(this.mitglieds);
+    } else {
     }
   }
+  deleteDate(emailAdresse: string) {
+    // @ts-ignore
+    this.mitglieds.splice(this.mitglieds.indexOf(emailAdresse), 1);
+  }
 
+    suchen() {
+      // tslint:disable-next-line:one-variable-per-declaration
+      let input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById('suchen');
+      filter = input.value.toUpperCase();
+      table = document.getElementById('myTable');
+      tr = table.getElementsByTagName('tr');
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName('td')[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = '';
+          } else {
+            tr[i].style.display = 'none';
+          }
+        }
+      }
+    }
 }

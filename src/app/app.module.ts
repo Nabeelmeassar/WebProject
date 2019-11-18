@@ -17,6 +17,9 @@ import { LehrveranstaltungComponent } from './components/lehrveranstaltung/lehrv
 import { BuecherComponent } from './components/buecher/buecher.component';
 import {AdminHomeComponent} from './Institutsmitglieder/admin-home/admin-home.component';
 import { MitgliedServiceService} from './services/mitglied-service.service';
+import { AdminMitgliedComponent } from './Institutsmitglieder/admin-mitglied/admin-mitglied.component';
+import { AboutComponent } from './components/about/about.component';
+import { ImpressumComponent } from './components/impressum/impressum.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -28,8 +31,9 @@ const appRoutes: Routes = [
     { path: 'mitglied', component: MitgliedComponent },
     { path: 'addmitglied', component: AddMitgliedComponent },
     { path: 'admin/home', component: AdminHomeComponent },
-
-
+    { path: 'admin/mitglied', component: AdminMitgliedComponent },
+    { path: 'about', component: AboutComponent },
+    { path: 'impressum', component: ImpressumComponent},
 ];
 @NgModule({
   declarations: [
@@ -42,7 +46,10 @@ const appRoutes: Routes = [
     ProjekteComponent,
     LehrveranstaltungComponent,
     BuecherComponent,
-      AdminHomeComponent
+      AdminHomeComponent,
+      AdminMitgliedComponent,
+      AboutComponent,
+      ImpressumComponent
   ],
     imports: [
         BrowserModule,

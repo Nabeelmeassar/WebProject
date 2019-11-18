@@ -81,3 +81,30 @@ button:hover{
     background-color: rgb(48, 14, 14);
     color: white;
 }
+h1{
+    font-weight: bold;
+    color: #6b3e91;
+    font-size: 2em;
+    line-height: 1.2;
+    font-family: cargan,Consolas,Menlo,Monaco,Courier,monospace;
+}
+h2 {
+    font-weight: bold;
+    color:
+            #ec6707;
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+h3 {
+    font-weight: bold;
+    color:
+            #a35494;
+    font-size: 1em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+.adresse{
+    color: #2c2f88;
+}
+
