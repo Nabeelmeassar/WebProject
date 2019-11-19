@@ -11,7 +11,7 @@ import { MitgliedServiceService} from '../../services/mitglied-service.service';
 export class AddMitgliedComponent implements OnInit {
   constructor(private myService: MitgliedServiceService) { }
   // install a array of member
-  @Input()  public mitglieds: Mitglied[] = [];
+  public mitglieds: Mitglied[] = [];
   @Output() EventShowMitglied = new EventEmitter();
   profileForm = new FormGroup({
     name: new FormControl(''),
@@ -23,6 +23,8 @@ export class AddMitgliedComponent implements OnInit {
 
 
   ngOnInit() {
+    // this.mitglieds = this.myService.test;
+
   }
   onSubmit() {
     // TODO: Use EventEmitter with form value
@@ -45,7 +47,6 @@ export class AddMitgliedComponent implements OnInit {
     // @ts-ignore
     this.mitglieds.splice(this.mitglieds.indexOf(emailAdresse), 1);
   }
-
     suchen() {
       // tslint:disable-next-line:one-variable-per-declaration
       let input, filter, table, tr, td, i, txtValue;

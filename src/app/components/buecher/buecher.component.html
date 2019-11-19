@@ -1,1 +1,18 @@
-<p>buecher works!</p>
+<h1 class="text-sm-center">Bücher</h1>
+
+<div  class="row">
+    <div *ngFor="let buch of Buecher" class="column">
+        <div class="card">
+            <img class="img-fluid p-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRccqmUx5yjuw1yxwoG1J2U7tu6cTVPm8VqZOZg55yFK8f1bVNe&s"
+                 alt="name" style="width:70%" >
+            <div class="container">
+                <h4>{{buch.auther}}</h4>
+                <p class="title">{{buch.title}}</p>
+                <p>Publisher: {{buch.publisher}}</p>
+                <p>ReleaseDate: {{buch.releaseDate}}</p>
+                <p>Theme: {{buch.theme}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+

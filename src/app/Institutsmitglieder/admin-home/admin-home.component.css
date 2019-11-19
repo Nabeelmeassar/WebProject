@@ -1,0 +1,17 @@
+.positive{
+    display: block;
+}
+.negative{
+    display: none;
+}
+
+.adminNav, button{
+    margin-top: 10px;
+}
+#login{
+    position: fixed;
+}
+#naviAdmin
+{
+
+}

@@ -8,7 +8,7 @@ p {
     padding: 10px;
 }
 .divLogo{
-    font-family: 'Aguafina Script';font-size: 19px;
+    font-family: 'Aguafina Script', serif;font-size: 19px;
     text-align: center;
     float: left;
     color: white;
@@ -45,14 +45,19 @@ p {
 ul{
     padding: 10px;
 }
+.navbar li a{
+    font-family: cargan,georgia,serif;
+    display: block;
+    padding: 0.6rem 4px;
+    line-height: 1;
+    text-decoration: none;
+    color: #2c2f88;
+    font-weight: bold;
+}
 li a:hover:not(.active) {
-    background-color: rgba(0, 0, 0, 0.63);
     color: white;
     border-radius: 5px;
     padding:10px auto;
-
-
-
 }
 table {
     font-family: arial, sans-serif;
@@ -78,15 +83,3 @@ margin-top: 20px;
     text-decoration: none;
     color: white;
 }
-.footer{
-    left: 0;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    background-color: rgb(206, 63, 63);
-    color: white;
-    padding: 5px;
-    padding-bottom: 20px
-}
-

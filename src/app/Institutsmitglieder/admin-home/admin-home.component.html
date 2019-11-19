@@ -1,26 +1,55 @@
-<div class="col-md-3" style="position: fixed">
-    <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/addmitglied/']"> Add Mitglied</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
-        </li>
-    </ul>
+<div id="login" [class]="isLogin ? 'negative' : 'positive'">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-10">
+                <label for="nameinput">Name: </label>
+                <input type="text" id="nameinput" class="form-control" formControlName="name" placeholder="Name" required>
+            </div>
+            <div class="form-group col-md-10">
+                <label for="nameinput">Name: </label>
+                <input type="password" id="password" class="form-control" formControlName="password"
+                       required placeholder="Password">
+            </div>
+            <div class="form-group col-md-10">
+                <button class="form-group btn btn-primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
+            </div>
+        </div>
+    </form>
 </div>
+<div [class]="isLogin ? 'positive  p-2 col-md' : 'negative'">
+    <div class="row border border-info">
+        <div id="naviAdmin" class="p-2 col-md">
+            <ul a class="adminNav nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/addmitglied/']">Neu Mitglied</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/add/buch/']">Neu Buch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/admin/mitglied/']">Mitglied</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>Login Page</h2>
+        </div>
+        <div class="col">
+            <button class=" adminNav btn btn-primary text-center form-control " (click)="logout()">logout</button>
+        </div>
+    </div>
+</div>
+
 

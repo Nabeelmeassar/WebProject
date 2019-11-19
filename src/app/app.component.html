@@ -1,7 +1,9 @@
 <title>{{title}}</title>
   <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <body>
-<nav class=" navi navbar navbar-expand-sm  navbar-dark">
+<nav class="navbar navbar-expand-sm  ">
 <div class="container">
   <a class="navbar-brand" href="#"><img src="https://hs-flensburg.de/themes/custom/hsfl/img/Logo_color_schrift_grau_72dpi-320px.png" width="50%" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -30,6 +32,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="mitglied">Mitglied</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="admin/home">login</a>
+      </li>
     </ul>
   </div>
 </div>
@@ -37,8 +42,8 @@
 
 <div class="container" style="margin-top:30px">
   <div class="row">
-    <div class="col-sm-3">
-      <h2>Über das Institut</h2>
+    <div class="col-md-3">
+      <h5>Über das Institut</h5>
       <div><img  class="card-img" src="https://hs-flensburg.de/sites/default/files/styles/frontpage_xl/public/aktuelles/2019-11/13.11.2019_campus_career_day_1.jpg?h=8b1a521b&itok=vhksvxdW" width="100%" height="100%" alt=""></div>
       <p class=" myfont p-2">Wer gut verwurzelt ist, kann hoch hinaus wachsen. Ob in Studium und Lehre, Forschung und Technologietransfer, nationalen und internationalen Beziehungen – die Hochschule Flensburg ist in all diesen Bereichen ganz nah an der Praxis und an den Menschen und weit voraus in Sachen Innovation und Wissen..</p>
       <ul class="nav nav-pills flex-column">
@@ -64,8 +69,9 @@
           <a class="nav-link" routerLink="mitglied">Mitglied</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="admin/home">Admin</a>
+          <a class="nav-link" routerLink="admin/home">Login</a>
         </li>
+<!--        <app-admin-home></app-admin-home>-->
 
       </ul>
       <hr class="d-sm-none">

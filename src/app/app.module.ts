@@ -3,9 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MitgliedComponent } from './components/mitglied/mitglied.component';
@@ -20,6 +17,7 @@ import { MitgliedServiceService} from './services/mitglied-service.service';
 import { AdminMitgliedComponent } from './Institutsmitglieder/admin-mitglied/admin-mitglied.component';
 import { AboutComponent } from './components/about/about.component';
 import { ImpressumComponent } from './components/impressum/impressum.component';
+import { AddBuchComponent } from './Institutsmitglieder/add-buch/add-buch.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -34,6 +32,8 @@ const appRoutes: Routes = [
     { path: 'admin/mitglied', component: AdminMitgliedComponent },
     { path: 'about', component: AboutComponent },
     { path: 'impressum', component: ImpressumComponent},
+    { path: 'add/buch', component: AddBuchComponent},
+
 ];
 @NgModule({
   declarations: [
@@ -49,7 +49,8 @@ const appRoutes: Routes = [
       AdminHomeComponent,
       AdminMitgliedComponent,
       AboutComponent,
-      ImpressumComponent
+      ImpressumComponent,
+      AddBuchComponent,
   ],
     imports: [
         BrowserModule,

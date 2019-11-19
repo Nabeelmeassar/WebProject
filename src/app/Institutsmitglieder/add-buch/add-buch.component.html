@@ -1,0 +1,49 @@
+<div>
+    <form [formGroup]="buchForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-10">
+                <label for="Author">Author: </label>
+                <input type="text" id="Author" class="form-control" formControlName="author" placeholder="Author">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="Title">Title: </label>
+                <input type="text" id="Title" class="form-control" formControlName="title" placeholder="Title">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="Publisher">Publisher: </label>
+                <input type="text" id="Publisher" class="form-control" formControlName="publisher" placeholder="Publisher">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="ReleaseDate">Publisher: </label>
+                <input type="date" id="ReleaseDate" class="form-control" formControlName="releaseDate" placeholder="ReleaseDate">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="stelle">Theme: </label>
+                <input type="text" id="stelle" class="form-control" formControlName="theme" placeholder="Theme">
+            </div>
+            <div class="form-group col-md-10">
+                <button class="form-group" type="submit" [disabled]="!buchForm.valid">Submit</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<h1 class="text-sm-center">Bücher</h1>
+<input type="text" (keyup)="suchen()" id="suchen" class="form-control" name="suchen" placeholder="Stelle">
+<table id="myTable">
+    <tr>
+        <th>Author:</th>
+        <th>Title:</th>
+        <th>Publisher:</th>
+        <th>ReleaseDate</th>
+        <th>Theme:</th>
+    </tr>
+    <tr *ngFor="let buch of Buecher">
+        <td>{{buch.auther}}</td>
+        <td>{{buch.title}}</td>
+        <td>{{buch.publisher}}</td>
+        <td>{{buch.releaseDate}}</td>
+        <td>{{buch.theme}}</td>
+        <td><button (click)="deleteDate(buch.theme)">Delete</button></td>
+    </tr>
+</table>
