@@ -11,7 +11,7 @@ import {Mitglied} from '../../model/mitglied';
 })
 export class AddBuchComponent implements OnInit {
     buchForm  = new FormGroup({
-      author: new FormControl(''),
+      auther: new FormControl(''),
       title: new FormControl(''),
       publisher: new FormControl(''),
       releaseDate: new FormControl(''),
@@ -27,7 +27,7 @@ export class AddBuchComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     if (this.buchForm.value.length > 0) {
     } else {
-      this.clickMethod(this.buchForm.value.name);
+      this.clickMethod(this.buchForm.value.title);
       console.log(this.Buecher);
     }
   }
