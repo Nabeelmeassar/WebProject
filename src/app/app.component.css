@@ -76,10 +76,16 @@ tr:nth-child(even) {
 }
 .page-footer{
 margin-top: 20px;
-    color: white;
-    background: #4769a0;
+color: #2c2f88;
+background: #6dbcbe;
+clear: both;
+padding-top: 2em;
+padding-bottom: 3em;
+font-size: 0.9em;
 }
 .page-footer a{
     text-decoration: none;
-    color: white;
+    color: #2c2f88;
+    
 }
+
