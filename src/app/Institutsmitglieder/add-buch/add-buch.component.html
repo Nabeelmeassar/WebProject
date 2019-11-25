@@ -3,7 +3,7 @@
         <div class="form-row">
             <div class="form-group col-md-10">
                 <label for="Author">Author: </label>
-                <input type="text" id="Author" class="form-control" formControlName="auther" placeholder="Author">
+                <input type="text" id="Author" class="form-control" formControlName="author" placeholder="Author">
             </div>
             <div class="form-group col-md-10">
                 <label for="Title">Title: </label>
@@ -14,7 +14,7 @@
                 <input type="text" id="Publisher" class="form-control" formControlName="publisher" placeholder="Publisher">
             </div>
             <div class="form-group col-md-10">
-                <label for="ReleaseDate">Publisher: </label>
+                <label for="ReleaseDate">Veröffentlichungsdatum: </label>
                 <input type="date" id="ReleaseDate" class="form-control" formControlName="releaseDate" placeholder="ReleaseDate">
             </div>
             <div class="form-group col-md-10">
@@ -22,14 +22,14 @@
                 <input type="text" id="stelle" class="form-control" formControlName="theme" placeholder="Theme">
             </div>
             <div class="form-group col-md-10">
-                <button class="form-group" type="submit" [disabled]="!buchForm.valid">Submit</button>
+                <button class="form-group" type="submit" [disabled]="!buchForm.valid">Hinzufügen</button>
             </div>
         </div>
     </form>
 
 </div>
 <h1 class="text-sm-center">Bücher</h1>
-<input type="text" (keyup)="suchen()" id="suchen" class="form-control" name="suchen" placeholder="Stelle">
+<input type="text" (keyup)="myService.suchen(undefined,$event)" id="suchen" class="form-control" name="suchen" placeholder="Stelle">
 <table id="myTable">
     <tr>
         <th>Author:</th>
@@ -38,12 +38,12 @@
         <th>ReleaseDate</th>
         <th>Theme:</th>
     </tr>
-    <tr *ngFor="let buch of Buecher">
-        <td>{{buch.auther}}</td>
+    <tr *ngFor="let buch of myService.buecher">
+        <td>{{buch.author}}</td>
         <td>{{buch.title}}</td>
         <td>{{buch.publisher}}</td>
         <td>{{buch.releaseDate}}</td>
         <td>{{buch.theme}}</td>
-        <td><button (click)="deleteDate(buch.theme)">Delete</button></td>
+        <td><button (click)="myService.deleteDate(buch.id, myService.buecher)">Delete</button></td>
     </tr>
 </table>

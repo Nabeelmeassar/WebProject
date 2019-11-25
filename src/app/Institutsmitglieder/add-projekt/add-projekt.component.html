@@ -1,0 +1,41 @@
+<div>
+    <form [formGroup]=" ProjektForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-10">
+                <label for="projectName">Name: </label>
+                <input type="text" id="projectName" class="form-control" formControlName="projectName" placeholder="Name">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="mitarbeiter">Mitarbeiter: </label>
+                <input type="text" id="mitarbeiter" class="form-control" formControlName="mitarbeiter" placeholder="mitarbeiter">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="beschreibung">Beschreibung: </label>
+                <textarea type="text" id="beschreibung" rows="4" class="form-control" formControlName="beschreibung" placeholder="beschreibung"></textarea>
+            </div>
+            <div class="form-group col-md-10">
+                <label for="geldgeber">Geldgeber: </label>
+                <input type="text" id="geldgeber" class="form-control" formControlName="geldgeber" placeholder="geldgeber">
+            </div>
+            <div class="form-group col-md-10">
+                <button class="form-group" type="submit" [disabled]="!ProjektForm.valid">Hinzufügen</button>
+            </div>
+        </div>
+    </form>
+</div>
+<input type="text" (keyup)="myService.suchen(undefined,$event)" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+<table id="myTable">
+    <tr>
+        <th>Projekt Name:</th>
+        <th>Mitarbeiter:</th>
+        <th>Beschreibung:</th>
+        <th>Geldgeber</th>
+    </tr>
+    <tr *ngFor="let projekt of myService.myProjekt">
+        <td><samp class="text-info">{{projekt.projectName}}</samp></td>
+        <td>{{projekt.mitarbeiter}}</td>
+        <td>{{projekt.beschreibung}}</td>
+        <td>{{projekt.geldgeber}}</td>
+        <td><button class="btn btn-danger" (click)="myService.deleteDate(projekt.id , myService.myProjekt )">Löschen</button></td>
+    </tr>
+</table>

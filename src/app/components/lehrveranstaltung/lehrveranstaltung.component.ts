@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MitgliedServiceService} from '../../services/mitglied-service.service';
 
 @Component({
   selector: 'app-lehrveranstaltung',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LehrveranstaltungComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myService: MitgliedServiceService) { }
 
   ngOnInit() {
   }
 
+  suchen() {
+  }
 }

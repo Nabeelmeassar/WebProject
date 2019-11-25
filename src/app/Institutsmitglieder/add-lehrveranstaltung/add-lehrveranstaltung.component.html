@@ -1,0 +1,47 @@
+<div>
+    <form [formGroup]=" LehrveranstaltungForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-10">
+                <label for="Author">Name: </label>
+                <input type="text" id="Author" class="form-control" formControlName="lehrName" placeholder="name">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="Theme">Theme: </label>
+                <input type="text" id="Theme" class="form-control" formControlName="theme" placeholder="Theme">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="lehrende">Lehrende: </label>
+                <input type="text" id="lehrende" class="form-control" formControlName="lehrende" placeholder="Lehrende">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="beschreibung">Beschreibung: </label>
+                <textarea type="text" id="beschreibung" rows="4" class="form-control" formControlName="beschreibung" placeholder="beschreibung"></textarea>
+            </div>
+            <div class="form-group col-md-10">
+                <label for="teilnahmeConter">teilnahmeConter: </label>
+                <input type="number" id="teilnahmeConter" class="form-control" aria-valuemax="1000"   (keypress)="myService.nurNummer($event)" formControlName="teilnahmeConter" placeholder="Teilnahme Anzahl">
+            </div>
+            <div class="form-group col-md-10">
+                <button class="form-group" type="submit" [disabled]="!LehrveranstaltungForm.valid">Hinzufügen</button>
+            </div>
+        </div>
+    </form>
+</div>
+<input type="text" (keyup)="myService.suchen(undefined,$event)" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+<table id="myTable">
+    <tr>
+        <th>Name:</th>
+        <th>Theme:</th>
+        <th>Lehrende:</th>
+        <th>Beschreibung</th>
+        <th>Teilnahmede:</th>
+    </tr>
+    <tr *ngFor="let Lehrveranstalt of myService.myLehrveranstaltung">
+        <td><samp class="text-info">{{Lehrveranstalt.lehrName}}</samp></td>
+        <td>{{Lehrveranstalt.theme}}</td>
+        <td>{{Lehrveranstalt.lehrende}}</td>
+        <td>{{Lehrveranstalt.beschreibung}}</td>
+        <td>{{Lehrveranstalt.teilnahmeConter}}</td>
+        <td><button class="btn btn-danger" (click)="myService.deleteDate(Lehrveranstalt.id , Lehrveranstalt )">Löschen</button></td>
+    </tr>
+</table>

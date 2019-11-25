@@ -21,6 +21,12 @@ p {
 p {
     font-family: Lato;
 }
+.Login{
+    display: none;
+}
+.Logout{
+    display: block;
+}
 .navi{
     background: #4769a0;
 }

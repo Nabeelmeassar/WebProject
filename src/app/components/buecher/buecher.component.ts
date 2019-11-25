@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MitgliedServiceService} from '../../services/mitglied-service.service';
+import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+
+import {Buch} from '../../model/buch';
 
 
 @Component({
@@ -8,16 +11,16 @@ import {MitgliedServiceService} from '../../services/mitglied-service.service';
   styleUrls: ['./buecher.component.css']
 })
 export class BuecherComponent implements OnInit {
-
-  private Buecher: any;
+  // Step 1:
+  // Create a property to track whether the menu is open.
+  // Start with the menu collapsed so that it does not
+  // appear initially when the page loads on a small screen!
+  isCollapsed: boolean;
   constructor(private myService: MitgliedServiceService) { }
 
-  ngOnInit() {
-    // this.myService.getTest(this.mitglieds);
-    console.log(this.myService.buecher);
-    this.Buecher = this.myService.buecher;
-    console.log(this.Buecher);
 
+  ngOnInit() {
+    this.isCollapsed = true;
   }
 
 }

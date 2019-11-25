@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MitgliedServiceService} from './services/mitglied-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WebProject';
-
-  showMitglied($event: any) {
-    console.log($event);
+  constructor(private myService: MitgliedServiceService) {
   }
+
 }

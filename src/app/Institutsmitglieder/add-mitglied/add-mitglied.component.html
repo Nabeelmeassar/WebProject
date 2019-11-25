@@ -18,14 +18,14 @@
                 <input type="text" id="stelle" class="form-control" formControlName="stelle" placeholder="Stelle">
             </div>
             <div class="form-group col-md-10">
-                <button class="form-group" type="submit" [disabled]="!profileForm.valid">Submit</button>
+                <button class="form-group" type="submit" [disabled]="!profileForm.valid">Hinzufügen</button>
             </div>
         </div>
     </form>
 
    </div>
 <h1 class="text-sm-center">Mitglied</h1>
-<input type="text" (keyup)="suchen()" id="suchen" class="form-control" name="suchen" placeholder="Stelle">
+<input type="text" (keyup)="myService.suchen(undefined,$event)" id="suchen" class="form-control" name="suchen" placeholder="Stelle">
 <table id="myTable">
     <tr>
         <th>Name:</th>
@@ -34,11 +34,11 @@
         <th>Büro:</th>
         <th></th>
     </tr>
-    <tr *ngFor="let mitglied of mitglieds">
+    <tr *ngFor="let mitglied of myService.mitglied">
         <td>{{mitglied.name}}</td>
         <td>{{mitglied.stelle}}</td>
         <td>{{mitglied.emailAdresse}}</td>
         <td>{{mitglied.buero}}</td>
-        <td><button (click)="deleteDate(mitglied.emailAdresse)">Delete</button></td>
+        <td><button (click)="myService.deleteDate(mitglied.id , myService.mitglied )">Delete</button></td>
     </tr>
 </table>

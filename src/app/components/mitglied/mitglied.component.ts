@@ -8,18 +8,10 @@ import {MitgliedServiceService} from '../../services/mitglied-service.service';
   styleUrls: ['./mitglied.component.css']
 })
 export class MitgliedComponent implements OnInit {
-    private mitglieds: any;
-    constructor(private myService: MitgliedServiceService) { }
 
-  ngOnInit() {
-        // this.myService.getTest(this.mitglieds);
-        console.log(this.myService.test);
-        this.mitglieds = this.myService.test;
-        console.log(this.mitglieds);
+    constructor(private myService: MitgliedServiceService) {
+    }
 
-  }
-    showMitglied(mitglieds: any) {
-        console.log(mitglieds);
-        this.mitglieds = mitglieds;
-  }
+    ngOnInit() {
+    }
 }

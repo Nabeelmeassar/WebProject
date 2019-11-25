@@ -39,7 +39,7 @@ menu li a.active {
 }
 
 li a:hover:not(.active) {
-    background-color: rgb(0, 0, 0);
+    background-color: #a2daf3;
     color: white;
 }
 .conti{
@@ -70,7 +70,7 @@ button{
 
 }
 button:hover{
-    background-color:black;
+    background-color: #a2daf3;
 }
 .footer{
     left: 0;

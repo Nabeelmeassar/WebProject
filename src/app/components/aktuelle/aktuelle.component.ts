@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {MitgliedServiceService} from '../../services/mitglied-service.service';
-import {FilterPipe} from 'ngx-filter-pipe';
 
 @Component({
-  selector: 'app-projekte',
-  templateUrl: './projekte.component.html',
-  styleUrls: ['./projekte.component.css']
+  selector: 'app-aktuelle',
+  templateUrl: './aktuelle.component.html',
+  styleUrls: ['./aktuelle.component.css']
 })
-
-export class ProjekteComponent implements OnInit {
+export class AktuelleComponent implements OnInit {
 
   constructor(private myService: MitgliedServiceService) { }
 

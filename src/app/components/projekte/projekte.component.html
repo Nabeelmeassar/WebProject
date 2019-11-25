@@ -1,1 +1,19 @@
-<p>projekte works!</p>
+<h2 class="text-center">Projekte</h2>
+<div class="small">
+    <input type="text" (keypress)="myService.suchen(myService.myProjekt, $event)" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+    <table id="table table-striped">
+        <tr>
+            <th>Projekt Name:</th>
+            <th>Mitarbeiter:</th>
+            <th>Beschreibung:</th>
+            <th>Geldgeber</th>
+        </tr>
+        <tr *ngFor="let projekt of myService.myProjekt">
+            <td><samp class="text-info">{{projekt.projectName}}</samp></td>
+            <td>{{projekt.mitarbeiter}}</td>
+            <td>{{projekt.beschreibung}}</td>
+            <td>{{projekt.geldgeber}}</td>
+        </tr>
+    </table>
+</div>
+

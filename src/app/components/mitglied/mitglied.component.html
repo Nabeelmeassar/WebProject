@@ -1,15 +1,19 @@
 <!--    <app-add-mitglied (EventShowMitglied)="showMitglied($event)"></app-add-mitglied>-->
-<h1 class="text-sm-center">Mitglied</h1>
+<h2 class="text-sm-center">Mitglied</h2>
 
-<div  class="row">
-        <div *ngFor="let mitglied of mitglieds" class="column">
+<div  class="row small">
+<!--    ngFor to show the array of -->
+        <div *ngFor="let mitglied of myService.mitglied" class="column">
             <div class="card">
-                <img class="img-fluid p-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo755O2z4QnJ_Re4g20D-t8m07KWOjPEahuSE1tympMVS7YDxHWA&s"
+                <img *ngIf="mitglied.id == 1" class="img-fluid p-2" src="https://hs-flensburg.de/sites/default/files/styles/portraitfoto/public/2017-11/petersen_kai.jpg.jpeg?itok=JVf1P7aR"
+                     alt="name" style="width:100%" >
+                <img *ngIf="mitglied.id != 1" class="img-fluid p-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo755O2z4QnJ_Re4g20D-t8m07KWOjPEahuSE1tympMVS7YDxHWA&s"
                      alt="name" style="width:70%" >
                 <div class="container">
-                    <h4>{{mitglied.name}}</h4>
+                    <h5>{{mitglied.name}}</h5>
+                    <h5> Raum {{mitglied.buero}}</h5>
                     <p class="title">{{mitglied.stelle}}</p>
-                    <p>Email: {{mitglied.emailAdresse}}</p>
+                    <p>{{mitglied.emailAdresse}}</p>
                 </div>
             </div>
         </div>

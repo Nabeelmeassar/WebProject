@@ -1,65 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import {Buch} from '../../model/Buch';
-import { MitgliedServiceService} from '../../services/mitglied-service.service';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms';
+import {Buch} from '../../model/buch';
+import {MitgliedServiceService} from '../../services/mitglied-service.service';
 import {Mitglied} from '../../model/mitglied';
 
 @Component({
-  selector: 'app-add-buch',
-  templateUrl: './add-buch.component.html',
-  styleUrls: ['./add-buch.component.css']
+    selector: 'app-add-buch',
+    templateUrl: './add-buch.component.html',
+    styleUrls: ['./add-buch.component.css']
 })
 export class AddBuchComponent implements OnInit {
-    buchForm  = new FormGroup({
-      auther: new FormControl(''),
-      title: new FormControl(''),
-      publisher: new FormControl(''),
-      releaseDate: new FormControl(''),
-      theme: new FormControl(''),
+    buchForm = new FormGroup({
+        id: new FormControl(''),
+        author: new FormControl(''),
+        title: new FormControl(''),
+        publisher: new FormControl(''),
+        releaseDate: new FormControl(''),
+        theme: new FormControl(''),
     });
 
-  constructor(private myService: MitgliedServiceService) { }
-  public Buecher: Buch[] = [];
-  ngOnInit() {
-  }
-
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
-    if (this.buchForm.value.length > 0) {
-    } else {
-      this.clickMethod(this.buchForm.value.title);
-      console.log(this.Buecher);
+    constructor(private myService: MitgliedServiceService) {
     }
-  }
-  clickMethod(name: string) {
-    if (confirm('Möchten Sie ' + name + ' hinzufügen')) {
 
-      this.Buecher.push(this.buchForm.value);
-      this.myService.AddBuch(this.Buecher);
-    } else {
+    public id: number;
+
+    ngOnInit() {
+        this.id = 1;
     }
-  }
-  deleteDate(emailAdresse: string) {
-    // @ts-ignore
-    this.Buecher.splice(this.Buecher.indexOf(emailAdresse), 1);
-  }
-  suchen() {
-    // tslint:disable-next-line:one-variable-per-declaration
-    let input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById('suchen');
-    filter = input.value.toUpperCase();
-    table = document.getElementById('myTable');
-    tr = table.getElementsByTagName('tr');
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName('td')[0];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = '';
-        } else {
-          tr[i].style.display = 'none';
+
+    onSubmit() {
+        this.buchForm.controls.id.setValue(this.id);
+        if (this.myService.confirmMethod(this.buchForm.value.title)) {
+            this.myService.buecher.push(this.buchForm.value);
+            this.id += 1;
         }
-      }
     }
-  }
+
 }

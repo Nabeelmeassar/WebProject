@@ -1,1 +1,42 @@
-<p>lehrveranstaltung works!</p>
+<h2 class="text-sm-center">Lehrveranstaltung</h2>
+
+<!--<div class="row">-->
+<!--    <div *ngFor="let Lehrveranstalt of Lehrveranstaltung" class="column" style="width: 100%;">-->
+<!--        <div class="card p-3">-->
+<!--            <h2 class="text-center">{{Lehrveranstalt.name}}</h2>-->
+<!--            <div class="container col">-->
+<!--                <div class="row">-->
+<!--                    <div class="col">-->
+<!--                        <img class="img-fluid p-2 m-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRccqmUx5yjuw1yxwoG1J2U7tu6cTVPm8VqZOZg55yFK8f1bVNe&s"-->
+<!--                             alt="name">-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+<!--                        <p class="title">{{Lehrveranstalt.title}}</p>-->
+<!--                        <p>Theme: {{Lehrveranstalt.theme}}</p>-->
+<!--                        <p>Lehrende: {{Lehrveranstalt.lehrende}}</p>-->
+<!--                        <p>Beschreibung: {{Lehrveranstalt.beschreibung}}</p>-->
+<!--                        <p>Teilnahmede Anzahl: {{Lehrveranstalt.teilnahmeConter}}</p>                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="small">
+    <input type="text" (keyup)="suchen()" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+    <table id="myTable">
+        <tr>
+            <th>Name:</th>
+            <th>Theme:</th>
+            <th>Lehrende:</th>
+            <th>Beschreibung</th>
+            <th>Teilnahmede:</th>
+        </tr>
+        <tr *ngFor="let Lehrveranstalt of myService.myLehrveranstaltung">
+            <td><samp class="text-info">{{Lehrveranstalt.lehrName}}</samp></td>
+            <td>{{Lehrveranstalt.theme}}</td>
+            <td>{{Lehrveranstalt.lehrende}}</td>
+            <td>{{Lehrveranstalt.beschreibung}}</td>
+            <td>{{Lehrveranstalt.teilnahmeConter}}</td>
+        </tr>
+    </table>
+</div>

@@ -19,25 +19,19 @@ export class AdminHomeComponent implements OnInit {
   constructor(private myService: MitgliedServiceService) { }
 
   ngOnInit() {
-   this.isLogin = this.myService.isLogin;
   }
 
     login() {
-        this.myService.login();
-        this.isLogin = true;
-
+        this.myService.isLogin = true;
     }
-
-  logout() {
-    this.myService.logout();
-    this.isLogin = false;
-
+    logout() {
+      this.myService.isLogin = false;
   }
 
   onSubmit() {
   if (this.profileForm.value.name === this.username && this.profileForm.value.password === this.password) {
     this.login();
-    alert('login successfully');
+    alert('Login successfully');
   } else {
     this.logout();
     alert('Login Failed. Please try again');
