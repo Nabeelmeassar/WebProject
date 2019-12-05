@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Buch} from '../../model/buch';
 import {MitgliedServiceService} from '../../services/mitglied-service.service';
 import {Mitglied} from '../../model/mitglied';
@@ -12,13 +12,12 @@ import {Mitglied} from '../../model/mitglied';
 export class AddBuchComponent implements OnInit {
     buchForm = new FormGroup({
         id: new FormControl(''),
-        author: new FormControl(''),
-        title: new FormControl(''),
-        publisher: new FormControl(''),
-        releaseDate: new FormControl(''),
-        theme: new FormControl(''),
+        author: new FormControl( null, [Validators.required, Validators.minLength(1)]),
+        title: new FormControl(null, [Validators.required, Validators.minLength(1)]),
+        publisher: new FormControl(null, [Validators.required, Validators.minLength(1)]),
+        releaseDate: new FormControl(null, [Validators.required, Validators.minLength(1)]),
+        theme: new FormControl(null, [Validators.required, Validators.minLength(1)]),
     });
-
     constructor(private myService: MitgliedServiceService) {
     }
 

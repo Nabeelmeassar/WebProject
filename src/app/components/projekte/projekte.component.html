@@ -1,7 +1,7 @@
 <h2 class="text-center">Projekte</h2>
 <div class="small">
-    <input type="text" (keypress)="myService.suchen(myService.myProjekt, $event)" id="suchen" class="form-control" name="suchen" placeholder="suchen">
-    <table id="table table-striped">
+    <input type="text" (keyup)="myService.search()" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+    <table id="myTable">
         <tr>
             <th>Projekt Name:</th>
             <th>Mitarbeiter:</th>

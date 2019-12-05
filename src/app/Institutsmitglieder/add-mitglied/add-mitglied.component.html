@@ -1,4 +1,5 @@
 <div>
+
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
         <div class="form-row">
             <div class="form-group col-md-10">
@@ -11,6 +12,7 @@
             </div>
             <div class="form-group col-md-10">
                 <label for="emailAdresse">Email: </label>
+                <p class="alert alert-danger small" *ngIf="profileForm.controls['emailAdresse'].hasError('email')">Geben Sie eine gültige E-Mail-Adresse ein.</p>
                 <input type="text" id="emailAdresse" class="form-control" formControlName="emailAdresse" placeholder="Email">
             </div>
             <div class="form-group col-md-10">
@@ -22,10 +24,9 @@
             </div>
         </div>
     </form>
-
    </div>
 <h1 class="text-sm-center">Mitglied</h1>
-<input type="text" (keyup)="myService.suchen(undefined,$event)" id="suchen" class="form-control" name="suchen" placeholder="Stelle">
+<input type="text" (keyup)="myService.search()" id="suchen" class="form-control" name="suchen" placeholder="Stelle">
 <table id="myTable">
     <tr>
         <th>Name:</th>

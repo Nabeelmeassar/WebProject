@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Mitglied} from '../../model/mitglied';
 import {MitgliedServiceService} from '../../services/mitglied-service.service';
 
@@ -16,11 +16,11 @@ export class AddMitgliedComponent implements OnInit {
 
     // install a array of member
     profileForm = new FormGroup({
-        id: new FormControl(''),
-        name: new FormControl(''),
-        buero: new FormControl(''),
-        emailAdresse: new FormControl(''),
-        stelle: new FormControl(''),
+        id: new FormControl(null),
+        name: new FormControl(null, [Validators.required, Validators.minLength(1)]),
+        buero: new FormControl(null, [Validators.required, Validators.minLength(1)]),
+        emailAdresse: new FormControl(null, [Validators.compose([Validators.email, Validators.required])]),
+        stelle: new FormControl(null, [Validators.required, Validators.minLength(1)]),
 
     });
 

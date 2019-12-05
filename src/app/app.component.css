@@ -1,70 +1,99 @@
 p {
     font-family: Lato, serif;
 }
+
 /* Add application styles & imports to this file! */
-.ueberschrieft{
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-.divLogo{
-    font-family: 'Aguafina Script', serif;font-size: 19px;
-    text-align: center;
-    float: left;
-    color: white;
-    width: 100%;
-    background-color: rgba(100, 89, 206, 0.48);
-    position: fixed;
-    left: 0;
-    top: 0;
-}
-p {
-    font-family: Lato;
-}
-.Login{
+.Login {
     display: none;
 }
-.Logout{
+
+.Logout {
     display: block;
 }
-.navi{
-    background: #4769a0;
-}
+
 .navi li {
     display: inline;
 }
-.navi i{
+
+.navi i {
     color: white;
 }
+
 .navi ul {
     list-style-type: none;
     min-width: 170px;
 }
+
 .navi li a {
     color: rgb(255, 255, 255);
     padding: 8px 16px;
     text-decoration: none;
 }
+
 .navi li a.active {
     color: white;
 }
-ul{
+
+ul {
     padding: 10px;
 }
-.navbar li a{
-    font-family: cargan,georgia,serif;
+
+.navbar {
+    background-repeat: repeat;
+    position: revert;
+}
+
+.navbar li a {
+    font-family: cargan, georgia, serif;
+    font-size: 14px;
     display: block;
-    padding: 0.6rem 4px;
+    padding: 1rem 4px;
     line-height: 1;
     text-decoration: none;
     color: #2c2f88;
     font-weight: bold;
+
+    text-transform: uppercase;
 }
+
 li a:hover:not(.active) {
-    color: white;
-    border-radius: 5px;
-    padding:10px auto;
+    color: black;
+    border: 1px black   ;
 }
+
+.nav_under {
+    color: white;
+    width: 100%;
+    /*background-image: url(/src/assets/img/background_nav.png);*/
+    background-repeat: repeat;
+    height: 84px;
+    background-color: #00ace5;;
+}
+
+.nav_under ul {
+    list-style-type: none;
+
+    padding: 0;
+    overflow: hidden;
+
+}
+
+.nav_under li {
+    float: left;
+    margin-top: 42px;
+    margin-right: 10px;
+
+}
+
+.nav_under li a {
+
+    background-color: #00ace5;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    bottom: -2px;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -80,18 +109,20 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-.page-footer{
-margin-top: 20px;
-color: #2c2f88;
-background: #6dbcbe;
-clear: both;
-padding-top: 2em;
-padding-bottom: 3em;
-font-size: 0.9em;
+
+.page-footer {
+    margin-top: 20px;
+    color: #2c2f88;
+    background: #6dbcbe;
+    clear: both;
+    padding-top: 2em;
+    padding-bottom: 3em;
+    font-size: 0.9em;
 }
-.page-footer a{
+
+.page-footer a {
     text-decoration: none;
     color: #2c2f88;
-    
+
 }
 
