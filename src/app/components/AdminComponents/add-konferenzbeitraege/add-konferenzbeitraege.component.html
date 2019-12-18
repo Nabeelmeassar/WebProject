@@ -1,0 +1,61 @@
+<div>
+    <form [formGroup]="KonferenzbeitraegeForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-10">
+                <label for="Autor">Autor: </label>
+                <input type="text" id="Autor" class="form-control" formControlName="author" placeholder="Autor">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="Title">Title: </label>
+                <input type="text" id="Title" class="form-control" formControlName="title" placeholder="Title">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="Herausgeber">Herausgeber: </label>
+                <input type="text" id="Herausgeber" class="form-control" formControlName="publisher" placeholder="Herausgeber">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="chapter">chapter: </label>
+                <input type="text" id="chapter" class="form-control" formControlName="chapter" placeholder="chapter">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="pages">pages: </label>
+                <input type="text" id="pages" class="form-control" formControlName="pages" placeholder="pages">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="Veröffentlichungsdatum">Veröffentlichungsdatum: </label>
+                <input type="date" id="Veröffentlichungsdatum" class="form-control" formControlName="releaseDate" placeholder="Veröffentlichungsdatum">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="stelle">Theme: </label>
+                <input type="text" id="stelle" class="form-control" formControlName="theme" placeholder="Theme">
+            </div>
+            <div class="form-group col-md-10">
+                <button class="form-group" type="submit" [disabled]="!KonferenzbeitraegeForm.valid">Hinzufügen</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<h1 class="text-sm-center">Konferenzbeiträg</h1>
+<input type="text" (keyup)="AdminService.search()" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+<table id="myTable">
+    <tr>
+        <th>Autor:</th>
+        <th>Title:</th>
+        <th>Herausgeber:</th>
+        <th>chapter:</th>
+        <th>pages:</th>
+        <th>Veröffentlichungsdatum</th>
+        <th>Theme:</th>
+    </tr>
+    <tr *ngFor="let konferenzB of AdminService.konferenzB">
+        <td>{{konferenzB.author}}</td>
+        <td>{{konferenzB.title}}</td>
+        <td>{{konferenzB.publisher}}</td>
+        <td>{{konferenzB.chapter}}</td>
+        <td>{{konferenzB.pages}}</td>
+        <td>{{konferenzB.releaseDate}}</td>
+        <td>{{konferenzB.theme}}</td>
+        <td><button (click)="AdminService.deleteDate(konferenzB.id, AdminService.konferenzB)">Delete</button></td>
+    </tr>
+</table>

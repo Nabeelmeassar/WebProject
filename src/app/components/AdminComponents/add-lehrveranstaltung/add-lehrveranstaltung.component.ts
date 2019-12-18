@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {MitgliedServiceService} from '../../services/mitglied-service.service';
+import {AdminServiceService} from '../../../services/admin-service.service';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Lehrveranstaltung} from '../../model/lehrveranstaltung';
+import {Lehrveranstaltung} from '../../../model/lehrveranstaltung';
 
 @Component({
     selector: 'app-add-lehrveranstaltung',
@@ -12,14 +12,14 @@ export class AddLehrveranstaltungComponent implements OnInit {
     public id: number;
     LehrveranstaltungForm = new FormGroup({
         id: new FormControl(''),
-        lehrName: new FormControl(''),
-        theme: new FormControl(''),
+        author: new FormControl(''),
+        publisher: new FormControl(''),
         lehrende: new FormControl(''),
         beschreibung: new FormControl(''),
         teilnahmeConter: new FormControl(''),
     });
 
-    constructor(private myService: MitgliedServiceService) {
+    constructor(private AdminService: AdminServiceService) {
     }
 
     ngOnInit() {
@@ -29,8 +29,8 @@ export class AddLehrveranstaltungComponent implements OnInit {
     onSubmit() {
 
         this.LehrveranstaltungForm.controls.id.setValue(this.id);
-        if (this.myService.confirmMethod(this.LehrveranstaltungForm.value.name)) {
-            this.myService.myLehrveranstaltung.push(this.LehrveranstaltungForm.value);
+        if (this.AdminService.confirmMethod(this.LehrveranstaltungForm.value.name)) {
+            this.AdminService.konferenzB.push(this.LehrveranstaltungForm.value);
             this.id += 1;
         }
     }

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
-import {Mitglied} from '../../model/mitglied';
-import {MitgliedServiceService} from '../../services/mitglied-service.service';
+import {Mitglied} from '../../../model/mitglied';
+import {AdminServiceService} from '../../../services/admin-service.service';
 
 @Component({
     selector: 'app-add-mitglied',
@@ -11,7 +11,7 @@ import {MitgliedServiceService} from '../../services/mitglied-service.service';
 export class AddMitgliedComponent implements OnInit {
     public id: number;
 
-    constructor(private myService: MitgliedServiceService) {
+    constructor(private AdminService: AdminServiceService) {
     }
 
     // install a array of member
@@ -32,8 +32,8 @@ export class AddMitgliedComponent implements OnInit {
 
         this.profileForm.controls.id.setValue(this.id);
 
-        if (this.myService.confirmMethod(this.profileForm.value.name)) {
-            this.myService.mitglied.push(this.profileForm.value);
+        if (this.AdminService.confirmMethod(this.profileForm.value.name)) {
+            this.AdminService.mitglied.push(this.profileForm.value);
             this.id += 1;
         }
     }

@@ -23,7 +23,7 @@
         </div>
     </form>
 </div>
-<input type="text" (keyup)="myService.search(undefined,$event)" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+<input type="text" (keyup)="AdminService.search()" id="suchen" class="form-control" name="suchen" placeholder="suchen">
 <table id="myTable">
     <tr>
         <th>Projekt Name:</th>
@@ -31,11 +31,11 @@
         <th>Beschreibung:</th>
         <th>Geldgeber</th>
     </tr>
-    <tr *ngFor="let projekt of myService.myProjekt">
+    <tr *ngFor="let projekt of AdminService.myProjekt">
         <td><samp class="text-info">{{projekt.projectName}}</samp></td>
         <td>{{projekt.mitarbeiter}}</td>
         <td>{{projekt.beschreibung}}</td>
         <td>{{projekt.geldgeber}}</td>
-        <td><button class="btn btn-danger" (click)="myService.deleteDate(projekt.id , myService.myProjekt )">Löschen</button></td>
+        <td><button class="btn btn-danger" (click)="AdminService.deleteDate(projekt.id , AdminService.myProjekt )">Löschen</button></td>
     </tr>
 </table>

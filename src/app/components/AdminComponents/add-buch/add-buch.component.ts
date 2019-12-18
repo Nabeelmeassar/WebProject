@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
-import {Buch} from '../../model/buch';
-import {MitgliedServiceService} from '../../services/mitglied-service.service';
-import {Mitglied} from '../../model/mitglied';
+import {Buch} from '../../../model/buch';
+import {AdminServiceService} from '../../../services/admin-service.service';
+import {Mitglied} from '../../../model/mitglied';
 
 @Component({
     selector: 'app-add-buch',
@@ -12,13 +12,14 @@ import {Mitglied} from '../../model/mitglied';
 export class AddBuchComponent implements OnInit {
     buchForm = new FormGroup({
         id: new FormControl(''),
-        author: new FormControl( null, [Validators.required, Validators.minLength(1)]),
+        author: new FormControl(null, [Validators.required, Validators.minLength(1)]),
         title: new FormControl(null, [Validators.required, Validators.minLength(1)]),
         publisher: new FormControl(null, [Validators.required, Validators.minLength(1)]),
         releaseDate: new FormControl(null, [Validators.required, Validators.minLength(1)]),
         theme: new FormControl(null, [Validators.required, Validators.minLength(1)]),
     });
-    constructor(private myService: MitgliedServiceService) {
+
+    constructor(private AdminService: AdminServiceService) {
     }
 
     public id: number;
@@ -29,8 +30,8 @@ export class AddBuchComponent implements OnInit {
 
     onSubmit() {
         this.buchForm.controls.id.setValue(this.id);
-        if (this.myService.confirmMethod(this.buchForm.value.title)) {
-            this.myService.buecher.push(this.buchForm.value);
+        if (this.AdminService.confirmMethod(this.buchForm.value.title)) {
+            this.AdminService.buecher.push(this.buchForm.value);
             this.id += 1;
         }
     }

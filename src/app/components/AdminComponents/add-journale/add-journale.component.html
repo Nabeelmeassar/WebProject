@@ -1,0 +1,43 @@
+<div>
+    <form [formGroup]="journaleForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-10">
+                <label for="title">Title: </label>
+                <input type="text" id="title" class="form-control" formControlName="title" placeholder="Title">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="Herausgeber">Herausgeber: </label>
+                <input type="text" id="Herausgeber" class="form-control" formControlName="publisher" placeholder="Herausgeber">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="Veröffentlichungsdatum">Veröffentlichungsdatum: </label>
+                <input type="date" id="Veröffentlichungsdatum" class="form-control" formControlName="releaseDate" placeholder="Veröffentlichungsdatum">
+            </div>
+            <div class="form-group col-md-10">
+                <label for="nummer">Nummer: </label>
+                <input type="text" id="nummer" class="form-control" formControlName="nummer" placeholder="Nummer">
+            </div>
+            <div class="form-group col-md-10">
+                <button class="form-group" type="submit" [disabled]="!journaleForm.valid">Hinzufügen</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<h1 class="text-sm-center">Bücher</h1>
+<input type="text" (keyup)="AdminService.search()" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+<table id="myTable">
+    <tr>
+        <th>Title:</th>
+        <th>Herausgeber:</th>
+        <th>Veröffentlichungsdatum</th>
+        <th>Nr.</th>
+    </tr>
+    <tr *ngFor="let journale of AdminService.journale">
+        <td>{{journale.title}}</td>
+        <td>{{journale.publisher}}</td>
+        <td>{{journale.releaseDate}}</td>
+        <td>{{journale.nummer}}</td>
+        <td><button (click)="AdminService.deleteDate(journale.id, AdminService.journale)">Delete</button></td>
+    </tr>
+</table>

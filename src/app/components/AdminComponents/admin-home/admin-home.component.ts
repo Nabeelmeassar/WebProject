@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MitgliedServiceService} from '../../services/mitglied-service.service';
+import { AdminServiceService} from '../../../services/admin-service.service';
 import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
@@ -16,16 +16,16 @@ export class AdminHomeComponent implements OnInit {
     name: new FormControl(''),
     password: new FormControl(''),
   });
-  constructor(private myService: MitgliedServiceService) { }
+  constructor(private AdminService: AdminServiceService) { }
 
   ngOnInit() {
   }
 
     login() {
-        this.myService.isLogin = true;
+        this.AdminService.isLogin = true;
     }
     logout() {
-      this.myService.isLogin = false;
+      this.AdminService.isLogin = false;
   }
 
   onSubmit() {

@@ -1,1 +1,25 @@
-<p>konferenzbeitraegen works!</p>
+<div class="small">
+    <h2 class="text-sm-center">Konferenzbeiträge</h2>
+<!--    <input type="text" (keyup)="AdminService.search()" id="suchen" class="form-control" name="suchen" placeholder="suchen">-->
+    <table id="myTable">
+        <tr>
+            <th>Autor:</th>
+            <th>Title:</th>
+            <th>Herausgeber:</th>
+            <th>chapter:</th>
+            <th>pages:</th>
+            <th>Veröffentlichungsdatum</th>
+            <th>Theme:</th>
+        </tr>
+        <tr *ngFor="let konferenzB of AdminService.konferenzB">
+            <td>{{konferenzB.author}}</td>
+            <td>{{konferenzB.title}}</td>
+            <td>{{konferenzB.publisher}}</td>
+            <td>{{konferenzB.chapter}}</td>
+            <td>{{konferenzB.pages}}</td>
+            <td>{{konferenzB.releaseDate}}</td>
+            <td>{{konferenzB.theme}}</td>
+        </tr>
+    </table>
+
+</div>

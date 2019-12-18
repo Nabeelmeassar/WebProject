@@ -5,35 +5,43 @@ import {Buch} from '../model/buch';
 import {Lehrveranstaltung} from '../model/lehrveranstaltung';
 import {Projekt} from '../model/projekt';
 
-7
 import {FilterPipe} from 'ngx-filter-pipe';
+import {Konferenzbeitraege} from '../model/konferenzbeiträge';
+import {Journale} from '../model/journale';
 
 @Injectable({
     providedIn: 'root'
 })
-export class MitgliedServiceService {
+export class AdminServiceService {
     // hier is the arrays datentype form the classes
     public mitglied: Mitglied[] = [
         new Mitglied(1, 'Kai Petersen', 'C 206', 'kai.petersen@hs-flensburg.de', 'Prof. Dr. phil'),
         new Mitglied(2, 'Nabeel', 'C229', 'Meassar2222@hotmail.com', 'Student')
-
     ];
     public buecher: Buch[] = [
-        new Buch(1, 'Nabeel', 'Jave', 'Hochshule Flensburg', '01-11-2019', 'jave'),
+        new Buch(1, 'Ali', 'Jave', 'Hochshule Flensburg', '01-11-2019', 'jave'),
         new Buch(2, 'Nabeel', 'C#', 'Hochshule Flensburg', '01-11-2019', 'C#')
     ];
     public myLehrveranstaltung: Lehrveranstaltung[] = [
-        new Lehrveranstaltung(1, 'Web Entwicklung ', 'Web Entwicklung mit Angular',
-            'Prof: Pertersen', 'Web Entwicklung Entwicklung Entwicklung Entwicklung', 12),
-        new Lehrveranstaltung(2, 'Web Entwicklung ', 'Web Entwicklung mit Angular',
-            'Prof: Pertersen', 'Web Entwicklung Entwicklung Entwicklung Entwicklung', 12),
-        new Lehrveranstaltung(3, 'java ', 'Web Entwicklung mit Angular',
-            'Prof: Pertersen', 'Web Entwicklung Entwicklung Entwicklung Entwicklung', 12)
+        new Lehrveranstaltung(1, 'Web Entwicklung ', 'Web Entwicklung mit Angular', 'Prof: Pertersen', 'Beschreibung Web Entwicklung', 12),
+        new Lehrveranstaltung(2, 'Web Entwicklung ', 'Web Entwicklung mit Angular', 'Prof: Pertersen', 'Beschreibung Web Entwicklung', 22),
+        new Lehrveranstaltung(3, 'java ', 'Web Entwicklung mit Angular', 'Prof: Pertersen', 'Beschreibung Web Entwicklung', 32)
     ];
-    public myProjekt: Projekt [] = [new Projekt(1, 'ProjektName', ' projekt Beschreibung ',
-        'Nabeel Moahmmed Nabeel Moahmmed', 'Hochschule Flensburg'),
-        new Projekt(1, 'Baustelle', ' projekt Beschreibung ',
-            'Nabeel Moahmmed Nabeel Moahmmed', 'Hochschule Flensburg')];
+    public myProjekt: Projekt [] = [
+        new Projekt(1, 'ProjektName', 'Projekt Beschreibung ', 'Max Meassar, Max Masterman', 'Hochschule Flensburg'),
+        new Projekt(1, 'Baustelle', ' Projekt Beschreibung ', 'Nabeel Meassar, Max Masterman', 'Hochschule Flensburg')];
+    public konferenzB: Konferenzbeitraege[] = [
+        new Konferenzbeitraege(2, 'Max', 'title', 'Hochschule', 2, 3, '12.12.2019', 'Sport'),
+        new Konferenzbeitraege(2, 'Max', 'title', 'Hochschule', 3, 3, '12.12.2019', 'Sport'),
+        new Konferenzbeitraege(2, 'Max', 'title', 'Hochschule', 4, 3, '12.12.2019', 'Sport'),
+        new Konferenzbeitraege(2, 'Max', 'title', 'Hochschule', 4, 3, '12.12.2019', 'Sport'),
+    ];
+    public journale: Journale[] = [
+        new Journale(1, 'Journale title', 'Stadt Flensburg', '12.12.2019', 3),
+        new Journale(1, 'Journale title', 'Hs Flensburg', '11.12.2019', 4),
+        new Journale(1, 'Journale title', 'Stadt Flensburg', '23.12.2019', 35),
+        new Journale(1, 'Journale title', 'Stadt Flensburg', '01.12.2019', 6)
+    ];
     isLogin = false;
 
     constructor() {
@@ -49,6 +57,7 @@ export class MitgliedServiceService {
     confirmMethod(name: string) {
         return confirm('Möchten Sie ' + name + ' hinzufügen');
     }
+
     search() {
         // tslint:disable-next-line:one-variable-per-declaration
         let input, filter, table, tr, td, i, txtValue;
@@ -67,26 +76,7 @@ export class MitgliedServiceService {
                 }
             }
         }
-        // const input = (e.target as HTMLInputElement).value;
-        // console.log(input);
-        // // const otherArray = [
-        // //     input,
-        // // ];
-        // const filtered = mylist.filter(item => input.indexOf(item.name) > -1)
-        // // console.log(filtered);
-        // const filteredd = mylist.filter(x => input.includes(x.basename()));
-        // console.log(filteredd);
-        // console.log(input);
-        // const reul =  this.filterPipe.transform(mylist, { projectName: input});
-        // return  this.myProjekt.filter(projectName => input == mylist.projectName);
     }
-
-    // input => Evaluation Ausdruck/Term
-    //
-    // x => x+3
-    //
-    // x= 5
-    // 8
 
 // logout methode
     logout() {

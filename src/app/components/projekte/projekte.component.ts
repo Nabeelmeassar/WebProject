@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MitgliedServiceService} from '../../services/mitglied-service.service';
+import {AdminServiceService} from '../../services/admin-service.service';
 import {FilterPipe} from 'ngx-filter-pipe';
 
 @Component({
@@ -10,7 +10,7 @@ import {FilterPipe} from 'ngx-filter-pipe';
 
 export class ProjekteComponent implements OnInit {
 
-  constructor(private myService: MitgliedServiceService) { }
+  constructor(private AdminService: AdminServiceService) { }
 
   ngOnInit() {
   }

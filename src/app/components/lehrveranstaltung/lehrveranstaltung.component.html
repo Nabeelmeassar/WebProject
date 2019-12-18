@@ -22,8 +22,8 @@
 <!--    </div>-->
 <!--</div>-->
 <div class="small">
-    <label for="suchen"></label>
-    <input type="text" (keyup)="myService.search()" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+<!--    <label for="suchen"></label>-->
+<!--    <input type="text" (keyup)="AdminService.search()" id="suchen" class="form-control" name="suchen" placeholder="suchen">-->
     <table id="myTable">
         <tr>
             <th>Name:</th>
@@ -32,7 +32,7 @@
             <th>Beschreibung</th>
             <th>Teilnahmede:</th>
         </tr>
-        <tr *ngFor="let Lehrveranstalt of myService.myLehrveranstaltung">
+        <tr *ngFor="let Lehrveranstalt of AdminService.myLehrveranstaltung">
             <td><samp class="text-info">{{Lehrveranstalt.lehrName}}</samp></td>
             <td>{{Lehrveranstalt.theme}}</td>
             <td>{{Lehrveranstalt.lehrende}}</td>

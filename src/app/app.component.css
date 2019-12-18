@@ -10,8 +10,7 @@ p {
 .Logout {
     display: block;
 }
-
-.navi li {
+li {
     display: inline;
 }
 
@@ -44,8 +43,7 @@ ul {
 }
 
 .navbar li a {
-    font-family: cargan, georgia, serif;
-    font-size: 14px;
+    font-size: 17px;
     display: block;
     padding: 1rem 4px;
     line-height: 1;
@@ -54,6 +52,9 @@ ul {
     font-weight: bold;
 
     text-transform: uppercase;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
 }
 
 li a:hover:not(.active) {
@@ -66,7 +67,6 @@ li a:hover:not(.active) {
     width: 100%;
     /*background-image: url(/src/assets/img/background_nav.png);*/
     background-repeat: repeat;
-    height: 84px;
     background-color: #00ace5;;
 }
 
@@ -80,9 +80,7 @@ li a:hover:not(.active) {
 
 .nav_under li {
     float: left;
-    margin-top: 42px;
-    margin-right: 10px;
-
+margin-right: 20px;
 }
 
 .nav_under li a {

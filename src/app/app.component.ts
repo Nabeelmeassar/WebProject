@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {MitgliedServiceService} from './services/mitglied-service.service';
+import {AdminServiceService} from './services/admin-service.service';
 
 @Component({
     selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
     imagePathLogo = 'assets/img/logo.png';
     imagePathbg = 'assets/img/background_nav.png';
 
-    constructor(private myService: MitgliedServiceService) {
+    constructor(private AdminService: AdminServiceService) {
     }
 
 }

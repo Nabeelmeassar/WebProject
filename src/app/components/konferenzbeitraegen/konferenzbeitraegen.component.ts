@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AdminServiceService} from '../../services/admin-service.service';
 
 @Component({
   selector: 'app-konferenzbeitraegen',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KonferenzbeitraegenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private AdminService: AdminServiceService) { }
 
   ngOnInit() {
   }

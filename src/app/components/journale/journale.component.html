@@ -1,1 +1,19 @@
-<p>journale works!</p>
+<div class="small">
+    <h2 class="text-sm-center">Journale</h2>
+<!--    <input type="text" (keyup)="AdminService.search()" id="suchen" class="form-control" name="suchen" placeholder="suchen">-->
+    <table id="myTable">
+        <tr>
+            <th>Title:</th>
+            <th>Herausgeber:</th>
+            <th>Veröffentlichungsdatum</th>
+            <th>Nr.</th>
+        </tr>
+        <tr *ngFor="let journale of AdminService.journale">
+            <td>{{journale.title}}</td>
+            <td>{{journale.publisher}}</td>
+            <td>{{journale.releaseDate}}</td>
+            <td>{{journale.nummer}}</td>
+        </tr>
+    </table>
+
+</div>

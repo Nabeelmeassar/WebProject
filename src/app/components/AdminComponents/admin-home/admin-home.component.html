@@ -1,14 +1,14 @@
-<div id="login" [class]="myService.isLogin ? 'negative' : 'positive'">
+<div id="login" [class]="AdminService.isLogin ? 'negative' : 'positive'">
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
         <div class="form-row">
             <div class="form-group col-md-10">
                 <label for="nameinput">Name: </label>
-                <input type="text" id="nameinput" class="form-control" formControlName="name" placeholder="Name" required>
+                <input type="text" id="nameinput" class="form-control" formControlName="name" placeholder="Name ist admin" required>
             </div>
             <div class="form-group col-md-10">
-                <label for="nameinput">Name: </label>
+                <label for="nameinput">Passwort:</label>
                 <input type="password" id="password" class="form-control" formControlName="password"
-                       required placeholder="Password">
+                       required placeholder="Password ist admin ">
             </div>
             <div class="form-group col-md-10">
                 <button class="form-group btn btn-primary" type="submit" [disabled]="!profileForm.valid">Login</button>
@@ -16,7 +16,7 @@
         </div>
     </form>
 </div>
-<div [class]="myService.isLogin ? 'positive  p-2 col-md' : 'negative'">
+<div [class]="AdminService.isLogin ? 'positive  p-2 col-md' : 'negative'">
     <div class="row border border-info">
         <div id="naviAdmin" class="p-2 w-30">
             <ul class="adminNav nav nav-pills flex-column small">
@@ -31,6 +31,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/add/projekt/']">Projekt hinzufügen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/add/konferenzbeitraege/']">Konferenzbeitraeg hinzufügen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/add/journale/']">journale hinzufügen</a>
                 </li>
             </ul>
         </div>

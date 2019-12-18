@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MitgliedServiceService} from '../../services/mitglied-service.service';
+import {AdminServiceService} from '../../../services/admin-service.service';
 import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
@@ -17,7 +17,7 @@ export class AddProjektComponent implements OnInit {
     });
     private id: number;
 
-    constructor(private myService: MitgliedServiceService) {
+    constructor(private AdminService: AdminServiceService) {
     }
 
     ngOnInit() {
@@ -26,8 +26,8 @@ export class AddProjektComponent implements OnInit {
 
     onSubmit() {
         this.ProjektForm.controls.id.setValue(this.id);
-        if (this.myService.confirmMethod(this.ProjektForm.value.name)) {
-            this.myService.myProjekt.push(this.ProjektForm.value);
+        if (this.AdminService.confirmMethod(this.ProjektForm.value.projectName)) {
+            this.AdminService.myProjekt.push(this.ProjektForm.value);
             this.id += 1;
         }
     }

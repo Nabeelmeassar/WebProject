@@ -1,6 +1,6 @@
 <h2 class="text-center">Projekte</h2>
 <div class="small">
-    <input type="text" (keyup)="myService.search()" id="suchen" class="form-control" name="suchen" placeholder="suchen">
+<!--    <input type="text" (keyup)="AdminService.search()" id="suchen" class="form-control" name="suchen" placeholder="suchen">-->
     <table id="myTable">
         <tr>
             <th>Projekt Name:</th>
@@ -8,8 +8,8 @@
             <th>Beschreibung:</th>
             <th>Geldgeber</th>
         </tr>
-        <tr *ngFor="let projekt of myService.myProjekt">
-            <td><samp class="text-info">{{projekt.projectName}}</samp></td>
+        <tr *ngFor="let projekt of AdminService.myProjekt">
+            <td>{{projekt.projectName}}</td>
             <td>{{projekt.mitarbeiter}}</td>
             <td>{{projekt.beschreibung}}</td>
             <td>{{projekt.geldgeber}}</td>

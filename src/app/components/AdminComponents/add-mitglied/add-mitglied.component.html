@@ -26,7 +26,7 @@
     </form>
    </div>
 <h1 class="text-sm-center">Mitglied</h1>
-<input type="text" (keyup)="myService.search()" id="suchen" class="form-control" name="suchen" placeholder="Stelle">
+<input type="text" (keyup)="AdminService.search()" id="suchen" class="form-control" name="suchen" placeholder="Stelle">
 <table id="myTable">
     <tr>
         <th>Name:</th>
@@ -35,11 +35,11 @@
         <th>Büro:</th>
         <th></th>
     </tr>
-    <tr *ngFor="let mitglied of myService.mitglied">
+    <tr *ngFor="let mitglied of AdminService.mitglied">
         <td>{{mitglied.name}}</td>
         <td>{{mitglied.stelle}}</td>
         <td>{{mitglied.emailAdresse}}</td>
         <td>{{mitglied.buero}}</td>
-        <td><button (click)="myService.deleteDate(mitglied.id , myService.mitglied )">Delete</button></td>
+        <td><button (click)="AdminService.deleteDate(mitglied.id , AdminService.mitglied )">Delete</button></td>
     </tr>
 </table>

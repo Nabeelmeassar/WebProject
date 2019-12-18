@@ -17,7 +17,7 @@
 <h2 class="text-sm-center">Bücher</h2>
 <div class="small">
 
-    <div *ngFor="let buch of myService.buecher">
+    <div *ngFor="let buch of AdminService.buecher">
 
 
         <a class="" type="button" (click)="isCollapsed =!isCollapsed" [attr.aria-expanded]="buch.id" attr.data-target="#{{buch.id}}">

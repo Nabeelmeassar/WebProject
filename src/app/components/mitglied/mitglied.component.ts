@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Mitglied} from '../../model/mitglied';
-import {MitgliedServiceService} from '../../services/mitglied-service.service';
+import {AdminServiceService} from '../../services/admin-service.service';
 
 @Component({
   selector: 'app-mitglied',
@@ -9,7 +9,7 @@ import {MitgliedServiceService} from '../../services/mitglied-service.service';
 })
 export class MitgliedComponent implements OnInit {
 
-    constructor(private myService: MitgliedServiceService) {
+    constructor(private AdminService: AdminServiceService) {
     }
 
     ngOnInit() {
