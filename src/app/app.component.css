@@ -24,7 +24,7 @@ li {
 }
 
 .navi li a {
-    color: rgb(255, 255, 255);
+  color: white;
     padding: 8px 16px;
     text-decoration: none;
 }
@@ -63,30 +63,31 @@ li a:hover:not(.active) {
 }
 
 .nav_under {
+  padding-top: 30px;
     color: white;
     width: 100%;
     /*background-image: url(/src/assets/img/background_nav.png);*/
     background-repeat: repeat;
-    background-color: #00ace5;;
+    background-color: #6dbcbe;;
 }
 
 .nav_under ul {
     list-style-type: none;
-
-    padding: 0;
     overflow: hidden;
 
 }
 
 .nav_under li {
     float: left;
-margin-right: 20px;
+  margin-top: 2px;
+
+  margin-right: 20px;
 }
 
 .nav_under li a {
 
-    background-color: #00ace5;
     font-size: 15px;
+     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
     bottom: -2px;
