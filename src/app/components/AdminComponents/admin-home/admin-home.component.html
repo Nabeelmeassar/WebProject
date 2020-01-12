@@ -1,26 +1,27 @@
 <div id="login" [class]="AdminService.isLogin ? 'negative' : 'positive'">
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-        <div class="form-row">
-          <div class=" col border border-danger">
-            <p class="alert alert-secondary">Name admin</p>
-            <p class="alert alert-secondary"> Passwort admin</p>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="nameinput">Name: </label>
-              <input type="text" id="nameinput" class="form-control" formControlName="name" placeholder="Name ist admin" required>
-            </div>
-            <div class="form-group ">
-              <label for="nameinput">Passwort:</label>
-              <input type="password" id="password" class="form-control" formControlName="password"
-                     required placeholder="Password ist admin ">
-            </div>
-            <div class="form-group ">
-              <button class="form-group btn btn-primary" type="submit" [disabled]="!profileForm.valid">Login</button>
-            </div>
-          </div>
-
+      <div class="row  border border-info p-4">
+        <div class=" border border-info p-2 m-4 ">
+          <h3 class="text-center">Login Daten</h3>
+          <p class="alert alert-secondary">Name admin</p>
+          <p class="alert alert-secondary"> Passwort admin</p>
         </div>
+        <div class="form-row">
+          <div class="form-group col-md-10">
+            <label for="nameinput">Name: </label>
+            <input type="text" id="nameinput" class="form-control" formControlName="name" placeholder="Name ist admin" required>
+          </div>
+          <div class="form-group col-md-10">
+            <label for="nameinput">Passwort:</label>
+            <input type="password" id="password" class="form-control" formControlName="password"
+                   required placeholder="Password ist admin ">
+          </div>
+          <div class="form-group col-md-10 text-center">
+            <button class="form-group btn btn-primary w-50" type="submit" [disabled]="!profileForm.valid">Login</button>
+          </div>
+        </div>
+      </div>
+
     </form>
 </div>
 <div [class]="AdminService.isLogin ? 'positive  p-2 col-md' : 'negative'">
@@ -28,22 +29,22 @@
         <div id="naviAdmin" class="p-2 w-30">
             <ul class="adminNav nav nav-pills flex-column small">
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/addmitglied/']">Mitglied hinzufügen</a>
+                    <a class="nav-link" [routerLink]="['/addmitglied/']"><i class='fa fa-edit'></i> Mitglied hinzufügen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/add/buch/']">Buch hinzufügen</a>
+                    <a class="nav-link" [routerLink]="['/add/buch/']"><i class='fa fa-edit'></i> Buch hinzufügen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/add/lehrveranstaltung/']">Lehrveranstaltung hinzufügen</a>
+                    <a class="nav-link" [routerLink]="['/add/lehrveranstaltung/']"><i class='fa fa-edit'></i> Lehrveranstaltung hinzufügen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/add/projekt/']">Projekt hinzufügen</a>
+                    <a class="nav-link" [routerLink]="['/add/projekt/']"><i class='fa fa-edit'></i> Projekt hinzufügen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/add/konferenzbeitraege/']">Konferenzbeitraeg hinzufügen</a>
+                    <a class="nav-link" [routerLink]="['/add/konferenzbeitraege/']"><i class='fa fa-edit'></i> Konferenzbeitraeg hinzufügen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/add/journale/']">journale hinzufügen</a>
+                    <a class="nav-link" [routerLink]="['/add/journale/']"><i class='fa fa-edit'></i> journale hinzufügen</a>
                 </li>
             </ul>
         </div>
